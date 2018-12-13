@@ -1,0 +1,792 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body {
+  margin: 0;
+}
+
+/***************************************    Style the form   ****************************************/
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+::-moz-selection {
+  background-color: #445AB3;
+  color: #fff;
+}
+
+::selection {
+  /* background-color: #69B344; */
+  background-color: #445AB3;
+  color: #fff;
+}
+
+.duff-search-box .mdl-textfield__input {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.duff-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.duff-fab {
+  position: absolute;
+  right: 20%;
+  bottom: -26px;
+  z-index: 3;
+  background: #101071 !important;
+  color: white !important;
+}
+
+.duff-mobile-title {
+  display: none !important;
+}
+
+.duff-logo-image {
+  /* height: 30px; */
+  width: 140px;
+}
+
+.duff-logo-image-nav {
+  height: 100px;
+  width: 100px;
+}
+
+.duff-header {
+  overflow: visible;
+  background-color: white;
+}
+
+  .duff-header .material-icons {
+    color: #767777 !important;
+  }
+
+  .duff-header .mdl-layout__drawer-button {
+    background: transparent;
+    color: #767777;
+  }
+
+  .duff-header .mdl-navigation__link {
+    color: #757575;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .duff-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction: rtl;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 500px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .duff-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 800px;
+  }
+
+  .duff-search-box.is-focused + .duff-navigation-container {
+    opacity: 0;
+    width: 100px;
+  }
+
+  .duff-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+  }
+
+    .duff-navigation .mdl-navigation__link:hover {
+      border-bottom: 4px solid #2e5aec;
+    }
+
+  .duff-search-box {
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .duff-more-button {
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+
+.duff-drawer {
+  border-right: none;
+}
+
+  .duff-drawer-separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+  }
+
+  .duff-drawer .mdl-navigation__link.mdl-navigation__link {
+    font-size: 14px;
+    color: #757575;
+  }
+
+  .duff-drawer span.mdl-navigation__link.mdl-navigation__link {
+    color: #17118A;
+  }
+
+  .duff-drawer .mdl-layout-title {
+    position: relative;
+    background: rgb(255, 255, 255);
+    height: 160px;
+  }
+    .duff-drawer .duff-logo-image {
+      position: absolute;
+      bottom: 16px;
+    }
+
+    .duff-drawer .duff-logo-image-nav{
+      position: absolute;
+      bottom: 16px;
+    }
+
+.duff-be-together-section {
+  position: relative;
+  height: 800px;
+  width: auto;
+  background-color: #f3f3f3;
+  background: url('../images/main/slide01.png') center 30% no-repeat;
+  background-size: cover;
+}
+
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+
+.duff-slogan {
+  font-size: 70px;
+  padding-top: 260px;
+}
+
+.duff-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
+}
+
+.duff-create-character {
+  font-size: 21px;
+  padding-top: 300px;
+}
+
+  .duff-create-character a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+  }
+
+.duff-screen-section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.duff-screens {
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.duff-screen {
+  text-align: center;
+}
+
+.duff-screen .duff-link {
+  margin-top: 16px;
+  display: block;
+  z-index: 2;
+}
+
+.duff-image-link {
+  text-decoration: none;
+}
+
+.duff-wear {
+  display: inline-block;
+  width: 160px;
+  margin-right: 32px;
+}
+
+  .duff-wear .duff-screen-image {
+    width: 40%;
+    z-index: 1;
+  }
+
+
+.duff-phone {
+  display: inline-block;
+  width: 64px;
+  margin-right: 48px;
+}
+
+  .duff-phone .duff-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.duff-tablet {
+  display: inline-block;
+  width: 110px;
+  margin-right: 64px;
+}
+
+  .duff-tablet .duff-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+  .duff-tablet .duff-link {
+    display: block;
+    z-index: 2;
+  }
+
+
+.duff-tv {
+  display: inline-block;
+  width: 300px;
+  margin-right: 80px;
+}
+
+  .duff-tv .duff-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.duff-auto {
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+}
+
+  .duff-auto .duff-screen-image {
+    display: block;
+    height: 300px;
+    z-index: 1;
+  }
+
+
+/* .duff-wear-section {
+  position: relative;
+  background: url('images/wear.png') center top no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.duff-wear-band {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #37474f;
+}
+
+.duff-wear-band-text {
+  max-width: 800px;
+  margin-left: 25%;
+  padding: 24px;
+  text-align: left;
+  color: white;
+}
+
+  .duff-wear-band-text p {
+    padding-top: 8px;
+  } */
+
+.duff-link {
+  text-decoration: none;
+  color: #4A62C3 !important;
+}
+
+  .duff-link:hover {
+    color: #4254B3 !important;
+  }
+
+  .duff-link .material-icons {
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+  }
+
+.duff-alt-link {
+  text-decoration: none;
+  color: #64ffda !important;
+  font-size: 16px;
+}
+
+  .duff-alt-link:hover {
+    color: #00bfa5 !important;
+  }
+
+  .duff-alt-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+.duff-more-section {
+  padding: 80px 0;
+  max-width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .duff-more-section .duff-section-title {
+    margin-left: 12px;
+    padding-bottom: 24px;
+  }
+
+.duff-block-section {
+    padding: 35px 0;
+    max-width: 1044px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+  .duff-block-section .duff-block-title {
+      margin-left: 12px;
+      /* padding-bottom: 24px; */
+      padding-bottom: 5px; /*used 10px before*/
+  }
+  
+.duff-card-container {
+}
+  .duff-card-container .mdl-card__media {
+    overflow: hidden;
+    background: transparent;
+  }
+
+    .duff-card-container .mdl-card__media img {
+      /* width: 100%; */
+      /* flex: 0 auto; 
+      float: ;
+      height: 150px;
+      margin: 5px 5px 5px 5px;
+      width: 150px; */
+      flex: 0 auto; 
+      height: 150px;
+      width: 150px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      vertical-align: middle;
+      padding-bottom: 10px;
+    }
+
+  .duff-card-container .mdl-card__title {
+    /* background: transparent; */
+    background: #0D0C6F;
+    height: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .duff-card-container .mdl-card__title-text {
+    color: white;
+    height: auto;
+  }
+
+  .duff-card-container .mdl-card__supporting-text {
+    /* height: auto; */
+    height: 40px;
+    color: black;
+    padding-bottom: 10px;
+    width: 93%; /*too make acc aline in the middle*/
+  }
+
+  .duff-card-container .mdl-card__supporting-text img {
+    flex: 0 auto;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .duff-card-container .mdl-card__actions {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .duff-card-container .mdl-card__actions a {
+    border-top: none;
+    font-size: 16px;
+  }
+  
+  .duff-card-container .mdl-textfield__input {
+    width: 200px;
+    font-size: 60px;
+    padding-left: 5px;
+    padding-top: 10px;
+  }
+
+  .duff-card-container .mdl-textfield__label {
+    width: 200px;
+    position: absolute;
+    padding-left: 30px;
+    text-align: right;
+  }
+
+  .duff-card-container .mdl-textfield {
+    width: 150px;
+    text-align: right;
+    padding-left: 20px;
+    margin-left: 1%;
+  }
+
+  .duff-card-container .mdl-switch {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    left: calc(82% - 60px);
+    display: inline-block;
+  }
+
+.duff-footer {
+  background-color: #fafafa;
+  position: relative;
+}
+
+  .duff-footer a:hover {
+    color: #221ABE;
+  }
+
+  .duff-footer .mdl-mega-footer--top-section::after {
+    border-bottom: none;
+  }
+
+  .duff-footer .mdl-mega-footer--middle-section::after {
+    border-bottom: none;
+  }
+
+  .duff-footer .mdl-mega-footer--bottom-section {
+    position: relative;
+  }
+
+  .duff-footer .mdl-mega-footer--bottom-section a {
+    margin-right: 2em;
+  }
+
+  .duff-footer .mdl-mega-footer--right-section a .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+
+.duff-link-menu:hover {
+  cursor: pointer;
+}
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+  .duff-navigation-container {
+    display: none;
+  }
+
+  .duff-title {
+    display: none !important;
+  }
+
+  .duff-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 12px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
+     consecutive "+" operators in some cases. Therefore, we need to use both
+     here to cover all the bases. */
+  .android.duff-search-box.is-focused ~ .duff-mobile-title,
+  .duff-search-box.is-focused + .duff-navigation-container + .duff-mobile-title {
+    opacity: 0;
+  }
+
+  .duff-more-button {
+    display: none;
+  }
+
+  .duff-search-box.is-focused {
+    width: calc(100% - 48px);
+  }
+
+  .duff-search-box .mdl-textfield__expandable-holder {
+    width: 100%;
+  }
+
+  .duff-be-together-section {
+    height: 350px;
+  }
+
+  .duff-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+    padding-top: 40px;
+    /* padding-top: 24px; */
+  }
+
+  .duff-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+    padding-top: 8px;
+  }
+
+  .duff-create-character {
+    /* padding-top: 200px; */
+    padding-top: 175px;
+    font-size: 16px;
+  }
+
+  .duff-create-character img {
+    height: 12px;
+  }
+
+  .duff-fab {
+    display: none;
+  }
+
+  .duff-wear-band-text {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .duff-footer .mdl-mega-footer--bottom-section {
+    display: none;
+  }
+}
+
+.duff-customized-section {
+  padding-left: 40%;
+  padding-bottom: 2%;
+  text-align: center;
+  padding-top: auto;
+}
+
+#home-card-img img {
+  width: 100%;
+  flex: 0 auto; 
+}
+
+#index-card-text {
+  padding-bottom: 40%;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 0px solid #ccc;
+  padding: 20px 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  background: transparent;
+  width: 88%;
+  height: 50%;
+}
+
+.card-content:hover {
+  opacity: 0.7;
+  -webkit-transition-duration: 0.2s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.card-content:active {
+  background: #4966FB;
+  /* background-color: #4755EF;#e5e5e5 */
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+background: #3B5998;
+color: white;
+}
+
+.fa-linkedin {
+background: #007bb5;
+color: white;
+}
+
+.fa-youtube {
+background: #bb0000;
+color: white;
+}
+
+.duff-customized-section .mdl-button--accent.mdl-button--accent.mdl-button--raised {
+  background-color: #132899;
+}
+
+.card-cell {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.card-divider {
+  display: block;
+  height: 120px;
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-cell-sub {
+  display: block;
+  margin: auto;
+  /* border-radius: 20px;
+  padding: 5px; */
+  border: 2px solid #508E20;
+}
+  .card-cell-sub:active {
+      background: #B8E4AC;
+      /* background-color: #4755EF;#e5e5e5 */
+      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: inset 0px 0px 5px #c1c1c1;
+      transform: translateY(4px);
+      outline: none;
+      top: 4px;
+  }
+
+  .card-cell-sub img:hover{
+      /* opacity: 0.6;
+      -webkit-transition-duration: 0.2s; */
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+.mdl-switch__ripple-container {
+  -webkit-mask-image: -webkit-radial-gradient(circle,#fff,#205E04);
+}
+
+/***************************   Calculator  Port   **********************************/
+#calculator-port {
+} 
+  #calculator-port .table .mdl-card {
+    width: 10%;
+  }
+  
+  #calculator-port #unit-button-click .mdl-button {
+    margin: 30px;
+  }
+
+  #calculator-port label{ 
+    padding-left: 15px;
+    /* font-size: 18px; */
+  }
+
+  #calculator-port #unit-table {
+    text-align: left;
+  }
+
+  #calculator-port .duff-button-section {
+    padding-left: auto;
+    /* padding-bottom: 2%; */
+    text-align: center;
+      
+    }
+
+  #calculator-port .mdl-card__supporting-text.mdl-card--border {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-top: 1px solid rgba(0,0,0,.1);
+    width: 95%;
+  }
+
+  #calculator-port .mdl-textfield {
+    position: relative;
+  }
+
+  #calculator-port .demo-card-wide.mdl-card {
+    width: 640px;
+    height: 300px;
+  }
+
+  #calculator-port .mdl-card__actions {
+    z-index: 5;
+  }
+
+  #calculator-port #name {
+    display:flex;
+    margin-top: 10px;
+    justify-content: left;
+  }
+
+  #calculator-port #contact{
+    display: flex;
+  }
+
+  #calculator-port #mycard {
+    height: 600px;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    outline: #0053FF solid 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #calculator-port .mdl-button--accent.mdl-button--accent.mdl-button--raised {
+    background-color: #FF7300;
+  }
+
+  #calculator-port .mdl-textfield__label {
+    margin-left: -15px;
+    /* font-size:16px; */
+  }
+
+  #calculator-port td img {
+    width: 80%;
+  }
+
+  #calculator-port .mdl-card__media {
+    background-color: white;
+  }
